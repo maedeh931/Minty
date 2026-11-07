@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F7FAFC"
     tools:context=".MainActivity">
 
+    <!-- Balance Display -->
     <TextView
-        android:id="@+id/tvHelloWorld"
+        android:id="@+id/tvBalance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world"
+        android:text="@string/balance_text"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/mint_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        android:layout_marginBottom="40dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Button to Navigate to AddTaskActivity -->
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_add_task"
+        android:textSize="16sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/mint_primary"
+        android:textColor="@color/white"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Button to Navigate to HistoryActivity -->
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_history"
+        android:textSize="16sp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/mint_dark"
+        android:textColor="@color/white" />
+
+</LinearLayout>

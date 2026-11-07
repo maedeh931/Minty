@@ -6,6 +6,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Minty">
+
+        <!-- Main Home Screen Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -15,6 +17,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Add Task Screen Activity -->
+        <activity
+            android:name=".AddTaskActivity"
+            android:exported="false"
+            android:label="@string/btn_add_task" />
+
+        <!-- History Screen Activity -->
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false"
+            android:label="@string/title_completed_tasks" />
+
     </application>
 
 </manifest>
