@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/card_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Row: Photo, Name/Username, Primary Star -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/ivBuddyAvatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mascot_minty"
+                android:contentDescription="Buddy avatar" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/tvBuddyDisplayName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minty Friend"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark" />
+
+                <TextView
+                    android:id="@+id/tvBuddyUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@minty_user"
+                    android:textSize="13sp"
+                    android:textColor="@color/leaf_dark" />
+
+                <TextView
+                    android:id="@+id/tvBuddyLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Focused 🌱"
+                    android:textSize="11sp"
+                    android:textColor="@color/text_muted" />
+            </LinearLayout>
+
+            <!-- Primary Buddy Gold Pill -->
+            <TextView
+                android:id="@+id/tvPrimaryBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_pill"
+                android:backgroundTint="@color/star_yellow"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="★ Primary"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_dark"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Action Buttons Row 1: View Dashboard & Encourage -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnViewDashboard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Dashboard 📊"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:paddingVertical="10dp"
+                android:backgroundTint="@color/leaf"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnSendEncouragement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Encourage ✨"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:paddingVertical="10dp"
+                android:backgroundTint="@color/star_yellow"
+                android:textColor="@color/text_dark"
+                app:cornerRadius="20dp"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Action Buttons Row 2: Set Primary & Remove -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnTogglePrimary"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set as Primary"
+                android:textSize="12sp"
+                android:textColor="@color/leaf_dark"
+                android:minHeight="0dp"
+                android:paddingVertical="4dp" />
+
+            <Button
+                android:id="@+id/btnRemoveBuddy"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Remove Buddy"
+                android:textSize="12sp"
+                android:textColor="@color/text_muted"
+                android:minHeight="0dp"
+                android:paddingVertical="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/warm_cream">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🌰 Plant a New Seed"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_text"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose an available seed from your inventory to grow in your garden."
+        android:textSize="13sp"
+        android:textColor="@color/text_muted"
+        android:layout_marginBottom="14dp" />
+
+    <!-- Seed Selection RadioGroup or Spinner -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Seed Variety:"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_text"
+        android:layout_marginBottom="6dp" />
+
+    <Spinner
+        android:id="@+id/spinnerSeeds"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_input_field"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="14dp" />
+
+    <!-- Custom Plant Nickname -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name Your Flower (Optional):"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_text"
+        android:layout_marginBottom="6dp" />
+
+    <EditText
+        android:id="@+id/etPlantName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_input_field"
+        android:hint="e.g. Sunny, Blossom, Sweet Herb"
+        android:textColor="@color/dark_text"
+        android:textColorHint="@color/text_muted"
+        android:paddingHorizontal="14dp"
+        android:textSize="14sp"
+        android:inputType="textCapWords"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>

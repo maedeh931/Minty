@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Soil mound -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M24,76 C32,60 64,60 72,76 Z" />
+
+    <!-- Seed oval -->
+    <path
+        android:fillColor="#D8BFA0"
+        android:pathData="M48,58 C44,58 41,64 43,69 C45,74 51,74 53,69 C55,64 52,58 48,58 Z" />
+
+    <!-- Tiny white crack/germination spark -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:fillColor="#00000000"
+        android:pathData="M48,60 L49,65" />
+</vector>

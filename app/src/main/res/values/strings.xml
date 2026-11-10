@@ -8,4 +8,11 @@
     <string name="btn_save">Save</string>
     <string name="title_completed_tasks">Completed Tasks</string>
     <string name="placeholder_no_tasks">No completed tasks yet</string>
+    <string name="empty_pending_tasks">No pending tasks. Tap Add Task.</string>
+    <string name="btn_start_scrolling">Start Scrolling</string>
+    <string name="title_spend_minutes">Spend Minutes</string>
+    <string name="btn_feedback">Feedback</string>
+    <string name="title_feedback">Feedback</string>
+    <string name="title_quote_of_the_day">Quote of the Day</string>
+    <string name="title_profile">Profile</string>
 </resources>

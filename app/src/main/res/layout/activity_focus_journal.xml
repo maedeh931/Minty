@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".FocusJournalActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aspen_green">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarJournal"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Focus Journal &amp; Reflection"
+            app:titleTextColor="@color/dark_text"
+            app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- New Reflection Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reflect on Your Session 📖"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taking 60 seconds to reflect solidifies what you learned."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="14dp" />
+
+                    <!-- Topic -->
+                    <EditText
+                        android:id="@+id/etTopic"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="What did you focus on?"
+                        android:textColor="@color/dark_text"
+                        android:textColorHint="@color/text_muted"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="10dp" />
+
+                    <!-- Key takeaway -->
+                    <EditText
+                        android:id="@+id/etTakeaway"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="What is one key thing you accomplished or learned?"
+                        android:textColor="@color/dark_text"
+                        android:textColorHint="@color/text_muted"
+                        android:paddingHorizontal="14dp"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="10dp" />
+
+                    <!-- Optional notes -->
+                    <EditText
+                        android:id="@+id/etNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="How did the session feel? Any roadblocks?"
+                        android:gravity="top|start"
+                        android:padding="12dp"
+                        android:textColor="@color/dark_text"
+                        android:textColorHint="@color/text_muted"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="14dp" />
+
+                    <!-- Save Reflection Button -->
+                    <Button
+                        android:id="@+id/btnSaveEntry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save Reflection ✨"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:paddingVertical="12dp"
+                        android:backgroundTint="@color/aspen_green"
+                        android:textColor="@color/white"
+                        app:cornerRadius="20dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Past Entries Header -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Past Reflections"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_text"
+                android:layout_marginBottom="10dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvJournalEntries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <TextView
+                android:id="@+id/tvEmptyJournal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No reflections yet. Complete a study session and write your first entry!"
+                android:textSize="13sp"
+                android:textColor="@color/text_muted"
+                android:gravity="center"
+                android:paddingVertical="24dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

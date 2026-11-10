@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_nav_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_focus"
+        android:icon="@drawable/ic_nav_focus"
+        android:title="Focus" />
+
+    <item
+        android:id="@+id/nav_garden"
+        android:icon="@drawable/ic_nav_garden"
+        android:title="Garden" />
+
+    <item
+        android:id="@+id/nav_buddies"
+        android:icon="@drawable/ic_nav_buddies"
+        android:title="Buddies" />
+
+    <item
+        android:id="@+id/nav_progress"
+        android:icon="@drawable/ic_nav_progress"
+        android:title="Progress" />
+
+</menu>

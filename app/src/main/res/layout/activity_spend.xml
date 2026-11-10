@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background"
+    tools:context=".SpendActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:paddingBottom="24dp">
+
+    <!-- Screen Title -->
+    <TextView
+        android:id="@+id/tvSpendTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_spend_minutes"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Current Balance Display Chip -->
+    <TextView
+        android:id="@+id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance: 0 minty minutes"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:background="@drawable/bg_chip_cream"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="7dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSpendTitle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Duration Selection Card: 20dp corners, card_white -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardDuration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@color/card_white"
+        app:layout_constraintTop_toBottomOf="@id/tvBalance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Scroll Duration:"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_dark"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rgDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb1Min"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1 min"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_dark"
+                    android:buttonTint="@color/leaf" />
+
+                <RadioButton
+                    android:id="@+id/rb5Min"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="5 min"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_dark"
+                    android:buttonTint="@color/leaf" />
+
+                <RadioButton
+                    android:id="@+id/rb10Min"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="10 min"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_dark"
+                    android:buttonTint="@color/leaf" />
+
+                <RadioButton
+                    android:id="@+id/rb15Min"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="15 min"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_dark"
+                    android:buttonTint="@color/leaf" />
+            </RadioGroup>
+
+            <!-- Start Button: rounded 24dp, leaf, bold white text -->
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingVertical="12dp"
+                android:backgroundTint="@color/leaf"
+                android:textColor="@color/white"
+                app:cornerRadius="24dp"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Countdown Timer Card: 20dp corners, cream background -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardTimer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp"
+        app:cardBackgroundColor="@color/cream"
+        app:layout_constraintTop_toBottomOf="@id/cardDuration"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remaining Scroll Time"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_muted" />
+
+            <!-- Big mm:ss countdown TextView -->
+            <TextView
+                android:id="@+id/tvCountdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="52sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_dark"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Stop Button: outlined with leaf_dark, rounded 24dp -->
+            <Button
+                android:id="@+id/btnStop"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stop"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:paddingVertical="12dp"
+                android:textColor="@color/leaf_dark"
+                app:strokeColor="@color/leaf_dark"
+                app:strokeWidth="2dp"
+                app:cornerRadius="24dp" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Open Social Media Button: rounded 24dp, star_yellow, text_dark -->
+    <Button
+        android:id="@+id/btnOpenSocialMedia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Open social media"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingVertical="14dp"
+        android:backgroundTint="@color/star_yellow"
+        android:textColor="@color/text_dark"
+        app:cornerRadius="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cardTimer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

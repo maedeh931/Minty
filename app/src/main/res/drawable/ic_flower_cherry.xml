@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Branch Stem -->
+    <path
+        android:strokeColor="#8D6E63"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M48,86 C48,65 42,48 48,34" />
+
+    <!-- Delicate Sakura Leaves -->
+    <path android:fillColor="#A8C3A0" android:pathData="M46,62 C32,60 28,48 40,50 C46,54 46,60 46,62 Z" />
+
+    <!-- 5 Sakura Blossom Petals (Soft Pink with Notched Tips) -->
+    <!-- Top Petal -->
+    <path android:fillColor="#FCE4EC" android:pathData="M48,12 C44,14 43,24 48,28 C53,24 52,14 48,12 Z" />
+
+    <!-- Top Right -->
+    <path android:fillColor="#F8BBD0" android:pathData="M66,22 C64,18 54,23 50,28 C54,31 63,30 66,22 Z" />
+
+    <!-- Bottom Right -->
+    <path android:fillColor="#F48FB1" android:pathData="M60,46 C64,44 58,34 50,32 C50,37 54,46 60,46 Z" />
+
+    <!-- Bottom Left -->
+    <path android:fillColor="#F48FB1" android:pathData="M36,46 C32,44 38,34 46,32 C46,37 42,46 36,46 Z" />
+
+    <!-- Top Left -->
+    <path android:fillColor="#F8BBD0" android:pathData="M30,22 C32,18 42,23 46,28 C42,31 33,30 30,22 Z" />
+
+    <!-- Cherry Blossom Pistils Center (Warm Gold & Rose) -->
+    <path
+        android:fillColor="#FF80AB"
+        android:pathData="M48,27 a5,5 0 1,0 0.1,0 Z" />
+    <path
+        android:fillColor="#F4E6A5"
+        android:pathData="M48,28 a3,3 0 1,0 0.1,0 Z" />
+</vector>

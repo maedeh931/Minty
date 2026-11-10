@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".DevToolsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aspen_green">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarDevTools"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Developer Diagnostics"
+            app:titleTextColor="@color/dark_text"
+            app:navigationIcon="?attr/homeAsUpIndicator" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Banner info -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🛠️ Internal Developer Diagnostic Suite\nUse these controls to verify ContentProvider, Realtime Database, and Cloud Firestore contracts."
+                android:textSize="13sp"
+                android:textColor="@color/text_muted"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Card: Android Syllabus Interactive Lab -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSyllabusLab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="@color/aspen_green"
+                app:cardBackgroundColor="@color/pale_mint">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📚 Android Syllabus Interactive Lab"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Interactive lab for 7-step lifecycle, TableLayout, WebView, GridView, SimpleAdapter, Bound &amp; Background Services, XML onClick, and ListView vs RecyclerView comparison."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenSyllabusLab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Launch Syllabus Lab 🚀"
+                        android:textColor="@color/dark_text"
+                        app:cornerRadius="10dp"
+                        app:backgroundTint="@color/aspen_green" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card: Virtual Garden Showcase Mode -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardShowcaseDev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="@color/aspen_green"
+                app:cardBackgroundColor="@color/warm_cream">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🌱 Virtual Garden Showcase Mode"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_text" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switchShowcaseMode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvShowcaseDevDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Enable fast-paced demonstrations for project presentations. All demo growth, seeds, and flowers are strictly isolated from real user data, SQLite history, balance, and Firestore."
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Demo Growth Interval Speed:"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/aspen_green_dark"
+                        android:layout_marginBottom="6dp" />
+
+                    <RadioGroup
+                        android:id="@+id/rgShowcaseSpeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <RadioButton
+                            android:id="@+id/rbSpeed5s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🚀 Ultra-Fast (15 pts every 5s — ~50s full demo)"
+                            android:textSize="12sp"
+                            android:textColor="@color/dark_text" />
+
+                        <RadioButton
+                            android:id="@+id/rbSpeed15s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⚡ Standard Presentation (15 pts every 15s — ~2.5 min demo)"
+                            android:textSize="12sp"
+                            android:textColor="@color/dark_text"
+                            android:checked="true" />
+
+                        <RadioButton
+                            android:id="@+id/rbSpeed30s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⏱️ Paced (15 pts every 30s — ~5 min demo)"
+                            android:textSize="12sp"
+                            android:textColor="@color/dark_text" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnOpenGardenShowcase"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Open Garden 🌸"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/aspen_green"
+                            android:textColor="@color/white"
+                            app:cornerRadius="18dp"
+                            android:paddingVertical="10dp"
+                            android:layout_marginEnd="6dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnResetDemoShowcase"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reset Demo 🔄"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="18dp"
+                            android:paddingVertical="10dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card: ContentProvider Testing -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardProvider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TaskProvider (ContentProvider Demo)"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="URI: content://com.minty.app.provider/tasks"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnProviderInsert"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Insert"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/aspen_green"
+                            android:textColor="@color/white"
+                            app:cornerRadius="18dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <Button
+                            android:id="@+id/btnProviderQuery"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Query"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/pastel_yellow"
+                            android:textColor="@color/dark_text"
+                            app:cornerRadius="18dp"
+                            android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp">
+
+                        <Button
+                            android:id="@+id/btnProviderUpdate"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Update"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="18dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <Button
+                            android:id="@+id/btnProviderDelete"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Delete"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="18dp"
+                            android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <!-- Provider Output Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/warm_cream">
+
+                        <TextView
+                            android:id="@+id/tvProviderResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:text="Tap any action button above to test TaskProvider."
+                            android:textSize="12sp"
+                            android:fontFamily="monospace"
+                            android:textColor="@color/dark_text" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card: Firebase Realtime Database & Firestore -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardFirebaseCloud"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Firebase Cloud Synchronization"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text" />
+
+                    <TextView
+                        android:id="@+id/tvCloudStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RTDB Status: Checking connection..."
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/aspen_green_dark"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- RTDB Operations -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Realtime Database (Balance &amp; Prefs)"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="6dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnRtdbSetBalance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="setValue (+5)"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/aspen_green"
+                            android:textColor="@color/white"
+                            app:cornerRadius="18dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <Button
+                            android:id="@+id/btnRtdbGetBalance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="getValue"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/pastel_yellow"
+                            android:textColor="@color/dark_text"
+                            app:cornerRadius="18dp"
+                            android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <Button
+                            android:id="@+id/btnRtdbUpdatePrefs"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="updatePrefs"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="18dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <Button
+                            android:id="@+id/btnRtdbRemovePref"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="removePref"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="18dp"
+                            android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <!-- Firestore Operations -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cloud Firestore (Tasks, Sessions &amp; Garden)"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btnFirestoreSetTask"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="set Task"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/aspen_green"
+                            android:textColor="@color/white"
+                            app:cornerRadius="18dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <Button
+                            android:id="@+id/btnFirestoreGetHistory"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="get History"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/pastel_yellow"
+                            android:textColor="@color/dark_text"
+                            app:cornerRadius="18dp"
+                            android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+
+                        <Button
+                            android:id="@+id/btnFirestoreAddSession"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="add Session"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="18dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <Button
+                            android:id="@+id/btnFirestoreGarden"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Garden Status"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="18dp"
+                            android:layout_marginStart="4dp" />
+                    </LinearLayout>
+
+                    <!-- Firebase Output Container -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:cardBackgroundColor="@color/warm_cream">
+
+                        <TextView
+                            android:id="@+id/tvFirebaseResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:text="Tap any Firebase button above to test cloud sync."
+                            android:textSize="12sp"
+                            android:fontFamily="monospace"
+                            android:textColor="@color/dark_text" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

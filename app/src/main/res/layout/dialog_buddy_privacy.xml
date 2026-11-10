@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/card_white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buddy Privacy Settings 🔒"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose what productivity statistics your connected buddies can see."
+        android:textSize="12sp"
+        android:textColor="@color/text_muted"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Switch: Master Sharing Enabled -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swMasterSharing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Progress Sharing"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:checked="true"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Switch: Share Completed Tasks -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swShareTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Completed Task Count"
+        android:textSize="13sp"
+        android:textColor="@color/text_dark"
+        android:checked="true"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Switch: Share Focus Time -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swShareFocus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Daily Focus Time"
+        android:textSize="13sp"
+        android:textColor="@color/text_dark"
+        android:checked="true"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Switch: Share Daily Streak -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swShareStreak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Daily Streak"
+        android:textSize="13sp"
+        android:textColor="@color/text_dark"
+        android:checked="true"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Switch: Share Weekly Progress -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swShareWeekly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Weekly Comparison"
+        android:textSize="13sp"
+        android:textColor="@color/text_dark"
+        android:checked="true"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Switch: Share Balance (default false) -->
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/swShareBalance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share Minty Minutes Balance"
+        android:textSize="13sp"
+        android:textColor="@color/text_dark"
+        android:checked="false"
+        android:layout_marginBottom="18dp" />
+
+    <Button
+        android:id="@+id/btnSavePrivacy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Settings"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/leaf"
+        android:textColor="@color/white"
+        app:cornerRadius="20dp" />
+
+</LinearLayout>

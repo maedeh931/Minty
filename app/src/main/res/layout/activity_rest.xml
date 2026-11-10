@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B261D"
+    tools:context=".RestActivity">
+
+    <!-- Top Moon & Stars Decorative Container -->
+    <LinearLayout
+        android:id="@+id/layoutNightSky"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvFirefly1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:textSize="18sp"
+            android:textColor="#F4E6A5"
+            android:layout_marginStart="40dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvMoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌕"
+            android:textSize="36sp" />
+
+        <TextView
+            android:id="@+id/tvFirefly2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="•"
+            android:textSize="16sp"
+            android:textColor="#F4E6A5"
+            android:layout_marginStart="24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨"
+            android:textSize="16sp"
+            android:layout_marginStart="20dp" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layoutNightSky"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="24dp">
+
+            <!-- Sleeping Mascot in Moonlit Halo -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <View
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/bg_badge_pill"
+                    android:backgroundTint="#2D3E30" />
+
+                <ImageView
+                    android:id="@+id/ivSleepingMascot"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/mascot_minty"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Sleeping Minty mascot" />
+
+                <TextView
+                    android:id="@+id/tvZzz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:text="Z z z 🌙"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#F4E6A5" />
+            </FrameLayout>
+
+            <!-- Rest Title & Serene Tagline -->
+            <TextView
+                android:id="@+id/tvRestTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minty is Resting"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#EAF2E7"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/tvRestSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rest is how deep roots grow. Your garden and streaks are completely safe."
+                android:textSize="13sp"
+                android:textColor="#A8C3A0"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Active Rest Countdown Timer Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardActiveRest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#3D5241"
+                app:cardBackgroundColor="#233226"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tvActiveRestLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mindful Rest Active"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#A8C3A0" />
+
+                    <TextView
+                        android:id="@+id/tvRestTimerCountdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00:59:45"
+                        android:textSize="38sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFF8EC"
+                        android:layout_marginVertical="6dp" />
+
+                    <TextView
+                        android:id="@+id/tvRestUntilTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Resting until 07:00 AM • Optional reminders paused"
+                        android:textSize="12sp"
+                        android:textColor="#A8C3A0" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Duration Selection Options Container (Visible when not actively resting) -->
+            <LinearLayout
+                android:id="@+id/layoutDurationOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Your Rest Duration:"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#EAF2E7"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Option 1: 1 Hour Power Rest -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRest1Hour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#3D5241"
+                    app:cardBackgroundColor="#233226"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="☕"
+                            android:textSize="22sp"
+                            android:layout_marginEnd="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Power Rest (1 Hour)"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#FFF8EC" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="A calm 60-minute recharge away from screens"
+                                android:textSize="11sp"
+                                android:textColor="#A8C3A0" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start →"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#A8C3A0" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Option 2: Rest Until Morning -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRestUntilTomorrow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#3D5241"
+                    app:cardBackgroundColor="#233226"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🌙"
+                            android:textSize="22sp"
+                            android:layout_marginEnd="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sleep Until Morning (7:00 AM)"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#FFF8EC" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Quiet night until 7:00 AM tomorrow"
+                                android:textSize="11sp"
+                                android:textColor="#A8C3A0" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Start →"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#A8C3A0" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Option 3: Custom Duration -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardRestCustom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#3D5241"
+                    app:cardBackgroundColor="#233226"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="⏱️"
+                            android:textSize="22sp"
+                            android:layout_marginEnd="14dp" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Custom Rest Duration"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#FFF8EC" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Choose your preferred hours and minutes"
+                                android:textSize="11sp"
+                                android:textColor="#A8C3A0" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pick →"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="#A8C3A0" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- Wake Up & Resume Button (Visible when actively resting) -->
+            <Button
+                android:id="@+id/btnWakeUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wake Up Minty &amp; Resume 🌱"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingVertical="14dp"
+                android:backgroundTint="@color/aspen_green"
+                android:textColor="@color/dark_text"
+                app:cornerRadius="24dp"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone" />
+
+            <!-- Back to Garden / Home Button -->
+            <Button
+                android:id="@+id/btnBackHome"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Back to Dashboard"
+                android:textColor="#A8C3A0"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

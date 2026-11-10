@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Stem -->
+    <path
+        android:strokeColor="#5B7C59"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M48,86 C48,60 48,40 48,26" />
+
+    <!-- Bushy Fresh Mint Leaves -->
+    <path android:fillColor="#8FA887" android:pathData="M48,64 C28,62 18,48 38,50 C48,54 48,62 48,64 Z" />
+    <path android:fillColor="#A8C3A0" android:pathData="M48,58 C68,54 78,40 58,44 C48,48 48,56 48,58 Z" />
+    <path android:fillColor="#A8C3A0" android:pathData="M48,44 C30,40 24,26 42,30 C48,34 48,42 48,44 Z" />
+    <path android:fillColor="#8FA887" android:pathData="M48,38 C66,34 72,20 54,24 C48,28 48,36 48,38 Z" />
+
+    <!-- Crown of Mint Herb Flowerets (Pale Lilac & White) -->
+    <path android:fillColor="#E8DDF2" android:pathData="M48,16 a5,5 0 1,0 0.1,0 Z" />
+    <path android:fillColor="#FFF8EC" android:pathData="M43,21 a4,4 0 1,0 0.1,0 Z" />
+    <path android:fillColor="#FFF8EC" android:pathData="M53,21 a4,4 0 1,0 0.1,0 Z" />
+    <path android:fillColor="#E8DDF2" android:pathData="M48,24 a4.5,4.5 0 1,0 0.1,0 Z" />
+</vector>

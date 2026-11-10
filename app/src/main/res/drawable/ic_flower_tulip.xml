@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Stem -->
+    <path
+        android:strokeColor="#5B7C59"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M48,86 C48,60 48,45 48,38" />
+
+    <!-- Long elegant tulip leaf -->
+    <path
+        android:fillColor="#8FA887"
+        android:pathData="M48,70 C30,64 24,40 38,36 C42,48 46,62 48,70 Z" />
+
+    <path
+        android:fillColor="#A8C3A0"
+        android:pathData="M48,64 C66,58 72,34 58,30 C54,42 50,56 48,64 Z" />
+
+    <!-- Tulip Blossom Cup (Soft Pink) -->
+    <!-- Back central petal -->
+    <path
+        android:fillColor="#F5DDE1"
+        android:pathData="M48,12 C42,18 42,32 48,36 C54,32 54,18 48,12 Z" />
+
+    <!-- Left cup petal -->
+    <path
+        android:fillColor="#F8BBD0"
+        android:pathData="M34,16 C34,28 42,38 48,38 C44,32 40,24 34,16 Z" />
+
+    <!-- Right cup petal -->
+    <path
+        android:fillColor="#F48FB1"
+        android:pathData="M62,16 C62,28 54,38 48,38 C52,32 56,24 62,16 Z" />
+
+    <!-- Front center petal -->
+    <path
+        android:fillColor="#FF80AB"
+        android:pathData="M48,18 C43,26 44,36 48,38 C52,36 53,26 48,18 Z" />
+</vector>

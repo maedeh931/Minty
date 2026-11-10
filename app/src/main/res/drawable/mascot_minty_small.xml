@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Little Sprout on top -->
+    <path
+        android:fillColor="@color/leaf"
+        android:pathData="M60,18 C60,18 52,10 48,13 C44,16 48,24 58,25 Z" />
+    <path
+        android:fillColor="@color/leaf_dark"
+        android:pathData="M60,20 C60,20 68,12 72,15 C76,18 72,26 62,26 Z" />
+    <path
+        android:strokeColor="@color/leaf_dark"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M60,22 L60,32" />
+
+    <!-- Main Mint Leaf Mascot Body -->
+    <path
+        android:fillColor="@color/mint"
+        android:pathData="M60,26 C36,26 24,46 24,72 C24,96 40,110 60,110 C80,110 96,96 96,72 C96,46 84,26 60,26 Z" />
+
+    <!-- Cute Leaf Outline -->
+    <path
+        android:strokeColor="@color/leaf"
+        android:strokeWidth="3.5"
+        android:fillColor="#00000000"
+        android:pathData="M60,26 C36,26 24,46 24,72 C24,96 40,110 60,110 C80,110 96,96 96,72 C96,46 84,26 60,26 Z" />
+
+    <!-- Left Eye -->
+    <path
+        android:fillColor="@color/text_dark"
+        android:pathData="M44,66 C46.2,66 48,63.8 48,61 C48,58.2 46.2,56 44,56 C41.8,56 40,58.2 40,61 C40,63.8 41.8,66 44,66 Z" />
+    <!-- Left Eye Highlight -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M42.5,58.5 C43.3,58.5 44,57.8 44,57 C44,56.2 43.3,55.5 42.5,55.5 C41.7,55.5 41,56.2 41,57 C41,57.8 41.7,58.5 42.5,58.5 Z" />
+
+    <!-- Right Eye -->
+    <path
+        android:fillColor="@color/text_dark"
+        android:pathData="M76,66 C78.2,66 80,63.8 80,61 C80,58.2 78.2,56 76,56 C73.8,56 72,58.2 72,61 C72,63.8 73.8,66 76,66 Z" />
+    <!-- Right Eye Highlight -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M74.5,58.5 C75.3,58.5 76,57.8 76,57 C76,56.2 75.3,55.5 74.5,55.5 C73.7,55.5 73,56.2 73,57 C73,57.8 73.7,58.5 74.5,58.5 Z" />
+
+    <!-- Rosy Cheek Blushes -->
+    <path
+        android:fillColor="@color/star_yellow"
+        android:fillAlpha="0.6"
+        android:pathData="M35,74 C37.8,74 40,71.8 40,69 C40,66.2 37.8,64 35,64 C32.2,64 30,66.2 30,69 C30,71.8 32.2,74 35,74 Z" />
+    <path
+        android:fillColor="@color/star_yellow"
+        android:fillAlpha="0.6"
+        android:pathData="M85,74 C87.8,74 90,71.8 90,69 C90,66.2 87.8,64 85,64 C82.2,64 80,66.2 80,69 C80,71.8 82.2,74 85,74 Z" />
+
+    <!-- Cheerful Smile -->
+    <path
+        android:strokeColor="@color/text_dark"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000"
+        android:pathData="M52,73 C56,79 64,79 68,73" />
+
+    <!-- Sparkle -->
+    <path
+        android:fillColor="@color/star_yellow"
+        android:pathData="M98,34 L100,28 L102,34 L108,36 L102,38 L100,44 L98,38 L92,36 Z" />
+
+</vector>

@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Vibration permission for task completion feedback -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Foreground service and notification permissions for scroll timer -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Boot completed permission for start-of-day reminders -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
+
+    <!-- Network permissions for Quote of the Day and Feedback API -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Contacts permission for Accountability Buddy -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- Queries package visibility for implicit SMS intent -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="smsto" />
+        </intent>
+    </queries>
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Minty">
 
-        <!-- Main Home Screen Activity -->
+        <!-- Login Screen Activity (Launcher) -->
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +45,16 @@
             </intent-filter>
         </activity>
 
+        <!-- Main Home Screen Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
         <!-- Add Task Screen Activity -->
         <activity
             android:name=".AddTaskActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustResize"
             android:label="@string/btn_add_task" />
 
         <!-- History Screen Activity -->
@@ -29,6 +62,132 @@
             android:name=".HistoryActivity"
             android:exported="false"
             android:label="@string/title_completed_tasks" />
+
+        <!-- Spend Minutes Screen Activity -->
+        <activity
+            android:name=".SpendActivity"
+            android:exported="false"
+            android:label="@string/title_spend_minutes" />
+
+        <!-- Feedback Screen Activity -->
+        <activity
+            android:name=".FeedbackActivity"
+            android:exported="false"
+            android:label="@string/title_feedback" />
+
+        <!-- Foreground Countdown Timer Service -->
+        <service
+            android:name=".CountdownService"
+            android:exported="false" />
+
+        <!-- Background Diagnostic Maintenance Service -->
+        <service
+            android:name=".BotanicalMaintenanceService"
+            android:exported="false" />
+
+        <!-- Profile Screen Activity -->
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:label="@string/title_profile" />
+
+        <!-- Task ContentProvider -->
+        <provider
+            android:name=".TaskProvider"
+            android:authorities="com.minty.app.provider"
+            android:exported="false" />
+
+        <!-- Task Reminder Exact Alarm Receiver -->
+        <receiver
+            android:name=".TaskReminderReceiver"
+            android:exported="false" />
+
+        <!-- Plan Tomorrow Activity -->
+        <activity
+            android:name=".PlanTomorrowActivity"
+            android:exported="false"
+            android:label="Plan Tomorrow" />
+
+        <!-- Peaceful Rest Mode Activity -->
+        <activity
+            android:name=".RestActivity"
+            android:exported="false"
+            android:label="Minty Rest Mode" />
+
+        <!-- The Little Memory Library Activity -->
+        <activity
+            android:name=".MemoryLibraryActivity"
+            android:exported="false"
+            android:label="The Little Memory Library" />
+
+        <!-- Static Boot Receiver for daily reminders -->
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Accountability Buddy Hub Activity -->
+        <activity
+            android:name=".BuddyActivity"
+            android:exported="false"
+            android:label="Accountability Buddies" />
+
+        <!-- Buddy Shared Productivity Profile Activity -->
+        <activity
+            android:name=".BuddyProfileActivity"
+            android:exported="false"
+            android:label="Shared Productivity" />
+
+        <!-- Developer Diagnostics Tool Activity -->
+        <activity
+            android:name=".DevToolsActivity"
+            android:exported="false"
+            android:label="Developer Diagnostics" />
+
+        <!-- Android Syllabus Interactive Lab Activity -->
+        <activity
+            android:name=".SyllabusLabActivity"
+            android:exported="false"
+            android:label="Android Syllabus Lab" />
+
+        <!-- Virtual Garden Activity -->
+        <activity
+            android:name=".GardenActivity"
+            android:exported="false"
+            android:label="Virtual Garden" />
+
+        <!-- Garden Collection & Flower Badges Activity -->
+        <activity
+            android:name=".GardenCollectionActivity"
+            android:exported="false"
+            android:label="Garden Collection" />
+
+        <!-- Achievement Scrapbook Activity -->
+        <activity
+            android:name=".ScrapbookActivity"
+            android:exported="false"
+            android:label="Achievement Scrapbook" />
+
+        <!-- Focus Timer & Mode Selector Activity -->
+        <activity
+            android:name=".FocusActivity"
+            android:exported="false"
+            android:label="Focus Timer" />
+
+        <!-- Productivity Analytics & Milestones Activity -->
+        <activity
+            android:name=".ProgressActivity"
+            android:exported="false"
+            android:label="Productivity Analytics" />
+
+        <!-- Focus Journal & Reflections Activity -->
+        <activity
+            android:name=".FocusJournalActivity"
+            android:exported="false"
+            android:label="Focus Journal" />
 
     </application>
 

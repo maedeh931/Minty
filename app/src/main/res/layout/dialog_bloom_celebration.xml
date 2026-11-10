@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    android:background="@color/warm_cream">
+
+    <ImageView
+        android:id="@+id/ivCelebrationFlower"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_flower_mint"
+        android:scaleType="fitCenter"
+        android:layout_marginBottom="14dp"
+        android:contentDescription="Bloomed flower" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🌸 Full Bloom Achieved! 🌸"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_text"
+        android:gravity="center"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:id="@+id/tvCelebrationMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your dedication has bloomed!\nYou planted consistency and grew something truly beautiful."
+        android:textSize="14sp"
+        android:textColor="@color/text_muted"
+        android:gravity="center"
+        android:lineSpacingExtra="3dp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvCelebrationReward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_badge_pill"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="6dp"
+        android:text="✨ Added to Flower Collection &amp; Achievements"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textColor="@color/aspen_green_dark" />
+
+</LinearLayout>

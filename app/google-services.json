@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "355493100470",
+    "project_id": "minty-93388",
+    "storage_bucket": "minty-93388.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355493100470:android:4fcf67e49ca2a8ee135f17",
+        "android_client_info": {
+          "package_name": "com.minty.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355493100470-u2ptlv58smmkndtk2d9fc3s2fcpnkq3q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.minty.app",
+            "certificate_hash": "243d1be2ac30f801a29acb66fe4eb0b8cb5b7137"
+          }
+        },
+        {
+          "client_id": "355493100470-glb7a2i20f1og55p1f48j456hlluln62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCatEJ5bv4pY-n4pwt5oPLgwbAVJIQth3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355493100470-glb7a2i20f1og55p1f48j456hlluln62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

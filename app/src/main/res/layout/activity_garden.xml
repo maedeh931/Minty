@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".GardenActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aspen_green">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarGarden"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="🌱 Virtual Garden"
+            app:titleTextColor="@color/dark_text">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnToggleShowcaseMode"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="12dp"
+                android:text="🧪 Demo Mode"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/aspen_green_dark"
+                app:strokeColor="@color/aspen_green_dark"
+                app:strokeWidth="1dp"
+                app:cornerRadius="14dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="14dp">
+
+            <!-- Showcase Mode Banner & Controls Card (Hidden by default in Normal Mode) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardShowcaseBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="1.5dp"
+                app:strokeColor="@color/flower_orange"
+                app:cardBackgroundColor="@color/warm_cream"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="✨ SHOWCASE DEMO MODE"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/flower_orange" />
+
+                        <TextView
+                            android:id="@+id/tvShowcaseSpeedLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_pill"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="2dp"
+                            android:text="Speed: 15s (+15 pts)"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark" />
+                    </LinearLayout>
+
+                    <!-- Dynamic Encouraging Growth Message -->
+                    <TextView
+                        android:id="@+id/tvShowcaseStatusMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Demo is active. Tap Start Auto-Grow to watch your plant grow!"
+                        android:textSize="12sp"
+                        android:textStyle="italic"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="10dp" />
+
+                    <!-- Showcase Action Controls -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnShowcaseToggleGrow"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="▶ Start Grow"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:backgroundTint="@color/aspen_green"
+                            android:textColor="@color/white"
+                            app:cornerRadius="14dp"
+                            android:paddingVertical="8dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnShowcaseNextStage"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="⚡ Next Stage"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="14dp"
+                            android:paddingVertical="8dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnShowcaseBloom"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🌸 Bloom"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/aspen_green_dark"
+                            app:strokeColor="@color/aspen_green_dark"
+                            app:cornerRadius="14dp"
+                            android:paddingVertical="8dp"
+                            android:layout_marginEnd="4dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnShowcaseReset"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🔄"
+                            android:textSize="12sp"
+                            android:textColor="@color/text_muted"
+                            app:strokeColor="@color/warm_beige"
+                            app:cornerRadius="14dp"
+                            android:paddingVertical="8dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Top Stats Strip -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="14dp">
+
+                <!-- Level Badge -->
+                <TextView
+                    android:id="@+id/tvGardenLevelHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_badge_pill"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:text="🌱 Little Seed • Lvl 1"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/aspen_green_dark"
+                    android:gravity="center"
+                    android:layout_marginEnd="6dp" />
+
+                <!-- Flowers Bloomed Pill -->
+                <TextView
+                    android:id="@+id/tvBloomedCountHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip_cream"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:text="🌸 0 Bloomed"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_text"
+                    android:layout_marginEnd="6dp" />
+
+                <!-- Seeds Count Pill -->
+                <TextView
+                    android:id="@+id/tvSeedsCountHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_chip_cream"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:text="🌰 2 Seeds"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_text" />
+            </LinearLayout>
+
+            <!-- Main Interactive Garden Bed Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardGardenCenterpiece"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/warm_cream">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:padding="20dp">
+
+                    <!-- Plant Name & Rename Trigger -->
+                    <LinearLayout
+                        android:id="@+id/layoutPlantName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/tvActivePlantName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Minty"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/dark_text" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@android:drawable/ic_menu_edit"
+                            app:tint="@color/text_muted"
+                            android:layout_marginStart="6dp"
+                            android:contentDescription="Rename plant" />
+                    </LinearLayout>
+
+                    <!-- Species and Stage Subtitle -->
+                    <TextView
+                        android:id="@+id/tvActivePlantStage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mint Herb • Sprout Stage"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Visual Planter & Plant Graphic Container -->
+                    <FrameLayout
+                        android:layout_width="160dp"
+                        android:layout_height="180dp"
+                        android:layout_marginBottom="12dp">
+
+                        <!-- Flower / Plant Graphic -->
+                        <ImageView
+                            android:id="@+id/ivActivePlant"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            android:layout_gravity="center_horizontal|top"
+                            android:src="@drawable/ic_plant_stage_sprout"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="Active plant" />
+
+                        <!-- Planter Pot at the base -->
+                        <ImageView
+                            android:id="@+id/ivPlanterPot"
+                            android:layout_width="140dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center_horizontal|bottom"
+                            android:src="@drawable/ic_garden_pot"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="Planter pot" />
+
+                        <!-- Water Splash Ripple (Hidden by default) -->
+                        <TextView
+                            android:id="@+id/tvWaterAnimation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="💧"
+                            android:textSize="36sp"
+                            android:visibility="gone" />
+                    </FrameLayout>
+
+                    <!-- Growth Progress Bar -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginBottom="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvGrowthLabel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Growth Points"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/dark_text" />
+
+                            <TextView
+                                android:id="@+id/tvGrowthFraction"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 / 45 pts"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/aspen_green_dark" />
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/pbGrowthProgress"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:layout_marginTop="6dp"
+                            android:max="100"
+                            android:progress="33"
+                            android:progressTint="@color/aspen_green"
+                            android:progressBackgroundTint="@color/pale_mint" />
+
+                        <TextView
+                            android:id="@+id/tvGrowthHint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Complete focus sessions to grow to Seedling!"
+                            android:textSize="11sp"
+                            android:textColor="@color/text_muted"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+
+                    <!-- Interactive Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Water Plant Button -->
+                        <Button
+                            android:id="@+id/btnWaterPlant"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="💧 Water"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:paddingVertical="12dp"
+                            android:backgroundTint="@color/aspen_green"
+                            android:textColor="@color/white"
+                            app:cornerRadius="20dp"
+                            android:layout_marginEnd="6dp" />
+
+                        <!-- Plant Seed Button -->
+                        <Button
+                            android:id="@+id/btnPlantSeed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🌰 Plant Seed"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:paddingVertical="12dp"
+                            android:backgroundTint="@color/pastel_yellow"
+                            android:textColor="@color/dark_text"
+                            app:cornerRadius="20dp"
+                            android:layout_marginStart="6dp" />
+                    </LinearLayout>
+
+                    <!-- Switch Plant Button -->
+                    <Button
+                        android:id="@+id/btnSwitchPlant"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🪴 Switch Active Flower"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/aspen_green_dark"
+                        app:strokeColor="@color/aspen_green_dark"
+                        app:cornerRadius="20dp"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card: Daily Garden Productivity Goals -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today's Garden Goals 🎯"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvGoalsSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Focus 45 Minutes (Reward: Daisy Seed)\n• Complete 2 Focus Sessions (Reward: Sunflower Seed)"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_muted"
+                        android:lineSpacingExtra="3dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Navigation Grid to Secondary Garden Hubs -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnOpenCollection"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="🌸 Collection"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="12dp"
+                    android:textColor="@color/aspen_green_dark"
+                    app:strokeColor="@color/aspen_green_dark"
+                    app:cornerRadius="18dp"
+                    android:layout_marginEnd="4dp" />
+
+                <Button
+                    android:id="@+id/btnOpenHistory"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📜 History"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="12dp"
+                    android:textColor="@color/aspen_green_dark"
+                    app:strokeColor="@color/aspen_green_dark"
+                    app:cornerRadius="18dp"
+                    android:layout_marginHorizontal="2dp" />
+
+                <Button
+                    android:id="@+id/btnOpenScrapbook"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="📖 Scrapbook"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="12dp"
+                    android:textColor="@color/aspen_green_dark"
+                    app:strokeColor="@color/aspen_green_dark"
+                    app:cornerRadius="18dp"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/card_white"
+        app:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/aspen_green_dark"
+        app:itemTextColor="@color/aspen_green_dark"
+        app:labelVisibilityMode="labeled" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

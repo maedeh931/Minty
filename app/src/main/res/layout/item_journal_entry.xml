@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/card_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvEntryTopic"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Math Assignment"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_text" />
+
+            <TextView
+                android:id="@+id/tvEntryRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⭐⭐⭐⭐⭐"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvEntryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today at 4:30 PM"
+            android:textSize="11sp"
+            android:textColor="@color/text_muted"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvEntryTakeaway"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Learned calculus optimization steps."
+            android:textSize="13sp"
+            android:textColor="@color/dark_text"
+            android:layout_marginBottom="6dp" />
+
+        <TextView
+            android:id="@+id/tvEntryNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Felt calm and uninterrupted."
+            android:textSize="12sp"
+            android:textColor="@color/text_muted" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

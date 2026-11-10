@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".FocusActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aspen_green">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarFocus"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Focus Timer"
+            app:titleTextColor="@color/dark_text" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp">
+
+            <!-- Mode Selector Chips -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose Focus Mode:"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/dark_text"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFocusMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                android:layout_marginBottom="14dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPomodoro"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pomodoro (25m)"
+                    android:checked="true"
+                    app:chipBackgroundColor="@color/pale_mint"
+                    android:textColor="@color/dark_text" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipDeepFocus"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deep Focus (50m)"
+                    app:chipBackgroundColor="@color/pale_mint"
+                    android:textColor="@color/dark_text" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipQuickFocus"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sprint (15m)"
+                    app:chipBackgroundColor="@color/pale_mint"
+                    android:textColor="@color/dark_text" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipLongFocus"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Study Block (60m)"
+                    app:chipBackgroundColor="@color/pale_mint"
+                    android:textColor="@color/dark_text" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Associate Task Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Link Task to Session (Optional):"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="6dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerTasks"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_input_field"
+                        android:paddingHorizontal="10dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Large Circular Timer Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="3dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/warm_cream">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:id="@+id/tvFocusSessionType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_badge_pill"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="5dp"
+                        android:text="Focus Session"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/aspen_green_dark"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- Countdown Display -->
+                    <TextView
+                        android:id="@+id/tvTimerCountdown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25:00"
+                        android:textSize="54sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <TextView
+                        android:id="@+id/tvTimerHint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ready to grow your focus garden 🌱"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginTop="8dp" />
+
+                    <ProgressBar
+                        android:id="@+id/pbTimerProgress"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="20dp"
+                        android:max="100"
+                        android:progress="100"
+                        android:progressTint="@color/aspen_green"
+                        android:progressBackgroundTint="@color/pale_mint" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Control Buttons Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="14dp">
+
+                <!-- Start Button -->
+                <Button
+                    android:id="@+id/btnStartTimer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Start Focus"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="14dp"
+                    android:backgroundTint="@color/aspen_green"
+                    android:textColor="@color/white"
+                    app:cornerRadius="24dp"
+                    android:layout_marginEnd="6dp" />
+
+                <!-- Pause / Resume Button -->
+                <Button
+                    android:id="@+id/btnPauseResumeTimer"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pause"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="14dp"
+                    android:textColor="@color/aspen_green_dark"
+                    app:strokeColor="@color/aspen_green_dark"
+                    app:cornerRadius="24dp"
+                    android:visibility="gone"
+                    android:layout_marginEnd="6dp" />
+
+                <!-- Stop Button -->
+                <Button
+                    android:id="@+id/btnStopTimer"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:paddingVertical="14dp"
+                    android:textColor="@color/dirt_soil"
+                    app:strokeColor="@color/dirt_soil"
+                    app:cornerRadius="24dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Focus Journal Reflection Button -->
+            <Button
+                android:id="@+id/btnOpenJournal"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📖 Focus Journal &amp; Reflections"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:paddingVertical="12dp"
+                android:textColor="@color/aspen_green_dark"
+                app:strokeColor="@color/aspen_green_dark"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/card_white"
+        app:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/aspen_green_dark"
+        app:itemTextColor="@color/aspen_green_dark"
+        app:labelVisibilityMode="labeled" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,63 +1,617 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollViewAddTask"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:background="#F7FAFC"
+    android:fillViewport="true"
+    android:background="@color/background"
     tools:context=".AddTaskActivity">
 
-    <!-- Header Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_add_task"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@color/mint_dark"
-        android:layout_marginBottom="24dp" />
-
-    <!-- Task Title Input Field -->
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingBottom="32dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etTaskTitle"
+        <!-- Header Card with Mascot: 20dp corners, cream background -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/task_title_hint"
-            android:inputType="textCapSentences" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/cream">
 
-    <!-- Minutes (Number Input) Field -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etMinutes"
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/mascot_minty"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Minty the mascot"
+                    android:layout_marginEnd="14dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Plan Your Next Task"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_dark" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set intentions, schedule reminders &amp; grow!"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 1: Task Title & Description -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/minutes_hint"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/card_white">
 
-    <!-- Save Button -->
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_save"
-        android:textSize="16sp"
-        android:paddingVertical="12dp"
-        android:backgroundTint="@color/mint_primary"
-        android:textColor="@color/white" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
 
-</LinearLayout>
+                <!-- Task Title Input Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:boxStrokeColor="@color/leaf"
+                    app:hintTextColor="@color/leaf"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTaskTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="What do you want to accomplish?"
+                        android:textColor="@color/text_dark"
+                        android:textColorHint="@color/text_muted"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Task Description Input Field (Optional) -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/leaf"
+                    app:hintTextColor="@color/leaf"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTaskDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Notes or steps (optional)"
+                        android:textColor="@color/text_dark"
+                        android:textColorHint="@color/text_muted"
+                        android:minLines="2"
+                        android:maxLines="4"
+                        android:inputType="textMultiLine|textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 2: Date & Start Time -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/card_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Planned Day 📅"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Day Selection Chips -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="12dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipToday"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Today ☀️"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipTomorrow"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tomorrow 🌙"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipPickDate"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pick Date..."
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Start Time Row -->
+                <LinearLayout
+                    android:id="@+id/layoutStartTimeRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingVertical="4dp">
+
+                    <Button
+                        android:id="@+id/btnSetStartTime"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set Start Time ⏰"
+                        android:textSize="13sp"
+                        android:textColor="@color/leaf_dark"
+                        app:strokeColor="@color/leaf"
+                        app:strokeWidth="1.5dp"
+                        app:cornerRadius="16dp" />
+
+                    <TextView
+                        android:id="@+id/tvSelectedTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:text="No specific time"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_muted" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 3: Priority & Category -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/card_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <!-- Priority -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Priority Level 🎯"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupPriority"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipPriorityLow"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Low 🟢"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipPriorityMed"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Medium 🟡"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipPriorityHigh"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="High 🔴"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Category -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category 🏷️"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCatStudy"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Study 📚"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCatWork"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Work 💼"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCatPersonal"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personal 🌸"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCatHealth"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health 💧"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCatGeneral"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General 🌿"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 4: Focus Reward Minutes & Task Reminder -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp"
+            app:cardBackgroundColor="@color/card_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <!-- Minutes Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Focus Duration &amp; Minutes Reward ⏱️"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Quick Minutes Chips -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupMinutes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    android:layout_marginBottom="10dp">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip15m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 min"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip25m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="25 min (Pomodoro)"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip45m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="45 min"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chip60m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60 min"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Minutes Manual Input Field -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeColor="@color/leaf"
+                    app:hintTextColor="@color/leaf"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMinutes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:hint="Custom minutes reward"
+                        android:textColor="@color/text_dark"
+                        android:textColorHint="@color/text_muted"
+                        android:imeOptions="actionDone"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Reminder Offset -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Task Reminder 🔔"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupReminder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRemindNone"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="None"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRemind5m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 min before"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRemind10m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="10 min before"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRemind15m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15 min before"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRemind30m"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30 min before"
+                        app:chipBackgroundColor="@color/chip_choice_background"
+                        android:textColor="@color/chip_choice_text"
+                        app:chipStrokeColor="@color/chip_choice_stroke"
+                        app:chipStrokeWidth="1dp"
+                        app:checkedIconVisible="true"
+                        app:checkedIconTint="@color/white" />
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Save Button: rounded 24dp, leaf, bold white text -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save &amp; Plant Task 🌱"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingVertical="14dp"
+            android:backgroundTint="@color/aspen_green"
+            android:textColor="@color/white"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

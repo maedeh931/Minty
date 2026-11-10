@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <!-- Stem -->
+    <path
+        android:strokeColor="#5B7C59"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeLineCap="round"
+        android:pathData="M48,86 C48,60 48,45 48,36" />
+
+    <!-- Big leaves -->
+    <path
+        android:fillColor="#8FA887"
+        android:pathData="M48,64 C26,62 18,46 38,48 C48,52 48,62 48,64 Z" />
+
+    <path
+        android:fillColor="#A8C3A0"
+        android:pathData="M48,58 C70,54 78,38 58,42 C48,46 48,56 48,58 Z" />
+
+    <!-- Sunflower Petals (Star of Gold) -->
+    <!-- Top/Bottom -->
+    <path android:fillColor="#F4E6A5" android:pathData="M48,10 C45,16 45,26 48,28 C51,26 51,16 48,10 Z" />
+    <path android:fillColor="#F4E6A5" android:pathData="M48,54 C45,48 45,38 48,36 C51,38 51,48 48,54 Z" />
+
+    <!-- Left/Right -->
+    <path android:fillColor="#F4E6A5" android:pathData="M26,32 C32,29 42,29 44,32 C42,35 32,35 26,32 Z" />
+    <path android:fillColor="#F4E6A5" android:pathData="M70,32 C64,29 54,29 52,32 C54,35 64,35 70,32 Z" />
+
+    <!-- Diagonals -->
+    <path android:fillColor="#F9A03F" android:pathData="M32,16 C38,19 44,27 46,29 C43,30 35,24 32,16 Z" />
+    <path android:fillColor="#F9A03F" android:pathData="M64,16 C58,19 52,27 50,29 C53,30 61,24 64,16 Z" />
+    <path android:fillColor="#F9A03F" android:pathData="M32,48 C38,45 44,37 46,35 C43,34 35,40 32,48 Z" />
+    <path android:fillColor="#F9A03F" android:pathData="M64,48 C58,45 52,37 50,35 C53,34 61,40 64,48 Z" />
+
+    <!-- Sunflower Center (Warm Brown Seed Disk) -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M48,22 a10,10 0 1,0 0.1,0 Z" />
+    <path
+        android:fillColor="#6D4C41"
+        android:pathData="M48,25 a7,7 0 1,0 0.1,0 Z" />
+</vector>

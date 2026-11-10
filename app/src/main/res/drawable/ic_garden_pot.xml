@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="60dp"
+    android:viewportWidth="120"
+    android:viewportHeight="60">
+
+    <!-- Planter rim -->
+    <path
+        android:fillColor="#D8BFA0"
+        android:pathData="M15,4 h90 a4,4 0 0,1 4,4 v6 a4,4 0 0,1 -4,4 h-90 a4,4 0 0,1 -4,-4 v-6 a4,4 0 0,1 4,-4 z" />
+
+    <!-- Planter body tapered -->
+    <path
+        android:fillColor="#C6A885"
+        android:pathData="M20,18 L32,54 a4,4 0 0,0 4,4 h48 a4,4 0 0,0 4,-4 L100,18 z" />
+
+    <!-- Soil -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M24,18 h72 a2,2 0 0,1 2,2 v2 a2,2 0 0,1 -2,2 h-72 a2,2 0 0,1 -2,-2 v-2 a2,2 0 0,1 2,-2 z" />
+</vector>

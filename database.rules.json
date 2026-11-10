@@ -1,0 +1,27 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "balance": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        },
+        "lastSyncTimestamp": {
+          ".validate": "newData.isNumber()"
+        },
+        "activeTimer": {
+          ".validate": "newData.hasChildren(['totalMinutes', 'remainingSeconds', 'isRunning']) || !newData.exists()"
+        },
+        "preferences": {
+          "$prefKey": {
+            ".validate": "newData.exists()"
+          }
+        },
+        "syncInfo": {
+          ".validate": "newData.hasChildren()"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ProgressActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/aspen_green">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarProgress"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Productivity &amp; Analytics"
+            app:titleTextColor="@color/dark_text" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="72dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="14dp">
+
+            <!-- Card 1: Today's Snapshot -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/warm_cream">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today's Performance 🎯"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Today Focus Minutes -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvTodayFocusMinutes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 min"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/aspen_green_dark" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Focus Time"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_muted" />
+                        </LinearLayout>
+
+                        <!-- Today Tasks Completed -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvTodayTasksCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/aspen_green_dark" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tasks Done"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_muted" />
+                        </LinearLayout>
+
+                        <!-- Productivity Ratio -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/tvProductivityRatio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0%"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/aspen_green_dark" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Goal Rate"
+                                android:textSize="12sp"
+                                android:textColor="@color/text_muted" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Weekly Focus Analytics & 7-Day Chart -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weekly Focus Trend 📊"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/tvWeeklyTotalMins"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total: 0 mins this week (avg 0m/day)"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_muted"
+                        android:layout_marginBottom="16dp" />
+
+                    <!-- 7-Day Visual Bars -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:orientation="horizontal"
+                        android:gravity="bottom"
+                        android:paddingHorizontal="4dp"
+                        android:layout_marginBottom="8dp">
+
+                        <!-- Mon -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <TextView android:id="@+id/tvBarMonVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0m" android:textSize="10sp" android:textColor="@color/text_muted" />
+                            <View android:id="@+id/barMon" android:layout_width="16dp" android:layout_height="10dp" android:background="@color/aspen_green" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="M" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/dark_text" android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <!-- Tue -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <TextView android:id="@+id/tvBarTueVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0m" android:textSize="10sp" android:textColor="@color/text_muted" />
+                            <View android:id="@+id/barTue" android:layout_width="16dp" android:layout_height="10dp" android:background="@color/aspen_green" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/dark_text" android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <!-- Wed -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <TextView android:id="@+id/tvBarWedVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0m" android:textSize="10sp" android:textColor="@color/text_muted" />
+                            <View android:id="@+id/barWed" android:layout_width="16dp" android:layout_height="10dp" android:background="@color/aspen_green" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="W" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/dark_text" android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <!-- Thu -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <TextView android:id="@+id/tvBarThuVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0m" android:textSize="10sp" android:textColor="@color/text_muted" />
+                            <View android:id="@+id/barThu" android:layout_width="16dp" android:layout_height="10dp" android:background="@color/aspen_green" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="T" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/dark_text" android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <!-- Fri -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <TextView android:id="@+id/tvBarFriVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0m" android:textSize="10sp" android:textColor="@color/text_muted" />
+                            <View android:id="@+id/barFri" android:layout_width="16dp" android:layout_height="10dp" android:background="@color/aspen_green" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="F" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/dark_text" android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <!-- Sat -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <TextView android:id="@+id/tvBarSatVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0m" android:textSize="10sp" android:textColor="@color/text_muted" />
+                            <View android:id="@+id/barSat" android:layout_width="16dp" android:layout_height="10dp" android:background="@color/aspen_green" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="S" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/dark_text" android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                        <!-- Sun -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="bottom|center_horizontal">
+
+                            <TextView android:id="@+id/tvBarSunVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0m" android:textSize="10sp" android:textColor="@color/text_muted" />
+                            <View android:id="@+id/barSun" android:layout_width="16dp" android:layout_height="10dp" android:background="@color/aspen_green" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="S" android:textSize="11sp" android:textStyle="bold" android:textColor="@color/dark_text" android:layout_marginTop="4dp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3: Consistency & Milestones -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/card_white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Consistency &amp; Botanical Milestones 🌿"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_text"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/tvConsistencySummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="• Daily Streak: 0 Days\n• Garden Level: Little Seed\n• Total Flowers Bloomed: 0\n• Lifetime Focus: 0 minutes"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_muted"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/card_white"
+        app:elevation="8dp"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/aspen_green_dark"
+        app:itemTextColor="@color/aspen_green_dark"
+        app:labelVisibilityMode="labeled" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

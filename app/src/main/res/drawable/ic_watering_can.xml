@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Can body -->
+    <path
+        android:fillColor="#A8C3A0"
+        android:pathData="M16,18 h16 a2,2 0 0,1 2,2 v16 a4,4 0 0,1 -4,4 h-12 a4,4 0 0,1 -4,-4 v-16 a2,2 0 0,1 2,-2 z" />
+
+    <!-- Handle -->
+    <path
+        android:strokeColor="#5B7C59"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M14,22 C8,22 8,36 14,36" />
+
+    <!-- Spout -->
+    <path
+        android:strokeColor="#5B7C59"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M32,28 L42,20" />
+
+    <!-- Rose nozzle -->
+    <path
+        android:fillColor="#F4E6A5"
+        android:pathData="M40,16 L44,22 L41,24 L37,18 z" />
+</vector>

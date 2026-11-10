@@ -2,14 +2,32 @@
     <!-- Base application theme. -->
     <style name="Theme.Minty" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/mint_primary</item>
-        <item name="colorPrimaryVariant">@color/mint_primary_variant</item>
+        <item name="colorPrimary">@color/leaf</item>
+        <item name="colorPrimaryVariant">@color/leaf_dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/mint_accent</item>
-        <item name="colorSecondaryVariant">@color/mint_accent</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/star_yellow</item>
+        <item name="colorSecondaryVariant">@color/star_yellow</item>
+        <item name="colorOnSecondary">@color/text_dark</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/leaf_dark</item>
+        <!-- Window background. -->
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <!-- High-Contrast Botanical Time & Date Picker Dialog Theme -->
+    <style name="MintyTimePickerDialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="colorPrimary">@color/leaf_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/leaf_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:textColorPrimary">@color/text_dark</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MintyDialogButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MintyDialogButtonStyle</item>
+    </style>
+
+    <style name="MintyDialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/leaf_dark</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

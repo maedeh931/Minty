@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
 
-    <!-- Minty custom palette -->
-    <color name="mint_primary">#2EC4B6</color>
-    <color name="mint_primary_variant">#20A495</color>
-    <color name="mint_dark">#0F4C45</color>
-    <color name="mint_light">#CBF3F0</color>
-    <color name="mint_accent">#FF9F1C</color>
+    <!-- Minty Official Aspen Green Botanical Palette -->
+    <color name="aspen_green">#A8C3A0</color>
+    <color name="pale_mint">#EAF2E7</color>
+    <color name="warm_cream">#FFF8EC</color>
+    <color name="warm_beige">#D8BFA0</color>
+    <color name="soft_pink">#F5DDE1</color>
+    <color name="lavender">#E8DDF2</color>
+    <color name="pastel_yellow">#F4E6A5</color>
+    <color name="dark_text">#39443B</color>
+
+    <!-- Extended Botanical Accents -->
+    <color name="sage_green">#8FA887</color>
+    <color name="aspen_green_dark">#5B7C59</color>
+    <color name="dirt_soil">#8D6E63</color>
+    <color name="flower_orange">#F9A03F</color>
+
+    <!-- Legacy Compatibility Aliases -->
+    <color name="leaf">#A8C3A0</color>
+    <color name="leaf_dark">#5B7C59</color>
+    <color name="mint">#EAF2E7</color>
+    <color name="star_yellow">#F4E6A5</color>
+    <color name="cream">#FFF8EC</color>
+    <color name="background">#F7FAF6</color>
+    <color name="text_dark">#39443B</color>
+    <color name="text_muted">#6C7D6F</color>
+    <color name="card_white">#FFFFFFFF</color>
 </resources>

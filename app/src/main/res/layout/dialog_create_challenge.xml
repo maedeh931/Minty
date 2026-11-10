@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/card_white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Study Challenge 🎯"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compete collaboratively with your buddy to reach your productivity goals!"
+        android:textSize="12sp"
+        android:textColor="@color/text_muted"
+        android:layout_marginBottom="14dp" />
+
+    <!-- Challenge Title Input -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Challenge Title"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etChallengeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="e.g. 300 Minutes Study Sprint"
+        android:textSize="14sp"
+        android:background="@drawable/bg_input_field"
+        android:padding="12dp"
+        android:textColor="@color/text_dark"
+        android:textColorHint="@color/text_muted"
+        android:inputType="textCapSentences"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Challenge Type -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Challenge Goal Type"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="4dp" />
+
+    <RadioGroup
+        android:id="@+id/rgChallengeType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="12dp">
+
+        <RadioButton
+            android:id="@+id/rbTypeMinutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Focus Minutes (e.g. 180 min)"
+            android:textSize="13sp"
+            android:checked="true"
+            android:buttonTint="@color/leaf" />
+
+        <RadioButton
+            android:id="@+id/rbTypeTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed Tasks (e.g. 10 tasks)"
+            android:textSize="13sp"
+            android:buttonTint="@color/leaf" />
+
+        <RadioButton
+            android:id="@+id/rbTypeStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daily Focus Streak (e.g. 5 days)"
+            android:textSize="13sp"
+            android:buttonTint="@color/leaf" />
+    </RadioGroup>
+
+    <!-- Target Amount -->
+    <TextView
+        android:id="@+id/tvTargetLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Target Amount (minutes)"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etChallengeTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="180"
+        android:text="180"
+        android:textSize="14sp"
+        android:background="@drawable/bg_input_field"
+        android:padding="12dp"
+        android:textColor="@color/text_dark"
+        android:inputType="number"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Duration (Days) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration (days to complete)"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="4dp" />
+
+    <EditText
+        android:id="@+id/etChallengeDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="7"
+        android:text="7"
+        android:textSize="14sp"
+        android:background="@drawable/bg_input_field"
+        android:padding="12dp"
+        android:textColor="@color/text_dark"
+        android:inputType="number"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Invite Buddy Spinner -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Buddy to Invite"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="4dp" />
+
+    <Spinner
+        android:id="@+id/spnSelectBuddy"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_input_field"
+        android:paddingHorizontal="10dp"
+        android:layout_marginBottom="18dp" />
+
+    <Button
+        android:id="@+id/btnSubmitChallenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Challenge Invitation 🚀"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@color/star_yellow"
+        android:textColor="@color/text_dark"
+        app:cornerRadius="20dp" />
+
+</LinearLayout>

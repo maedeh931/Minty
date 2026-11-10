@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@color/card_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/mascot_minty"
+                android:contentDescription="User Avatar" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:id="@+id/tvRequestName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minty Friend"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark" />
+
+                <TextView
+                    android:id="@+id/tvRequestUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@username"
+                    android:textSize="12sp"
+                    android:textColor="@color/leaf_dark" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvRequestStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_pill"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:text="Pending"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/leaf_dark" />
+        </LinearLayout>
+
+        <!-- Incoming Actions: Accept & Reject -->
+        <LinearLayout
+            android:id="@+id/layoutIncomingActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAcceptRequest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Accept 🌱"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:paddingVertical="10dp"
+                android:backgroundTint="@color/leaf"
+                android:textColor="@color/white"
+                app:cornerRadius="20dp"
+                android:layout_marginEnd="4dp" />
+
+            <Button
+                android:id="@+id/btnRejectRequest"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Decline"
+                android:textSize="13sp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/text_muted"
+                app:strokeColor="@color/mint"
+                app:cornerRadius="20dp"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Outgoing Actions: Cancel Request -->
+        <LinearLayout
+            android:id="@+id/layoutOutgoingActions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btnCancelRequest"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel Request"
+                android:textSize="13sp"
+                android:paddingVertical="10dp"
+                android:textColor="@color/leaf_dark"
+                app:strokeColor="@color/leaf"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
